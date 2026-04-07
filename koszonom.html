@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Köszönjük! — Vision Studio</title>
+
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;
+n.push=n;
+n.loaded=!0;
+n.version='2.0';
+n.queue=[];
+t=b.createElement(e);
+t.async=!0;
+t.src=v;
+s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)
+}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1897949664189776');
+fbq('track', 'PageView');
+</script>
+<noscript>
+<img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1897949664189776&ev=PageView&noscript=1"/>
+</noscript>
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GS3P9ZW86F"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-GS3P9ZW86F');
+</script>
+
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+
+
+
+<style>
+:root {
+  --gold-pale:  #F5ECD8;
+  --gold-soft:  #E2C98A;
+  --gold:       #C9A96E;
+  --gold-deep:  #A07840;
+  --gold-rule:  rgba(201,169,110,0.25);
+  --gold-rule-s:rgba(201,169,110,0.12);
+  --white:      #FFFFFF;
+  --cream-0:    #FDFBF8;
+  --cream-1:    #F8F3EC;
+  --ink-0:      #0F0E0C;
+  --ink-1:      #1A1714;
+  --text-light: #6B5F52;
+  --text-mid:   #9A8E82;
+  --text-dark:  rgba(240,232,218,0.75);
+  --text-dark-lo:rgba(180,165,148,0.62);
+  --ease-lux: cubic-bezier(0.16,1,0.3,1);
+}
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--ink-0);
+  color:var(--text-dark);
+  font-family:'Jost',sans-serif;
+  font-weight:300;
+  font-size:16px;
+  line-height:1.85;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+}
+
+/* ── Satin texture ── */
+body::after {
+  content:'';
+  position:fixed;inset:0;
+  background-image:
+    repeating-linear-gradient(55deg,transparent,transparent 12px,rgba(255,255,255,0.013) 12px,rgba(255,255,255,0.013) 13px),
+    repeating-linear-gradient(-55deg,transparent,transparent 12px,rgba(201,169,110,0.02) 12px,rgba(201,169,110,0.02) 13px);
+  pointer-events:none;z-index:0;
+}
+
+/* ── Nav ── */
+.nav {
+  position:relative;z-index:10;
+  padding:1.6rem 3rem;
+  display:flex;align-items:center;justify-content:space-between;
+  border-bottom:1px solid var(--gold-rule);
+}
+.nav-logo {
+  font-family:'Cormorant Garamond',serif;
+  font-weight:300;font-size:1rem;
+  letter-spacing:.4em;text-transform:uppercase;
+  color:var(--gold);text-decoration:none;
+}
+
+/* ── Main ── */
+main {
+  flex:1;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  text-align:center;
+  padding:7rem 2rem;
+  position:relative;z-index:1;
+}
+
+/* ── Checkmark ── */
+.check-wrap {
+  width:72px;height:72px;
+  border:1px solid var(--gold-rule);
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 3rem;
+  opacity:0;
+  animation:fadeUp 1s var(--ease-lux) .2s forwards;
+}
+.check-wrap svg {
+  width:28px;height:28px;
+  stroke:var(--gold);stroke-width:1.5;
+  fill:none;stroke-linecap:round;stroke-linejoin:round;
+}
+
+/* ── Label ── */
+.label {
+  display:block;
+  font-family:'Jost',sans-serif;font-weight:400;
+  font-size:0.62rem;letter-spacing:0.35em;text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:1.4rem;
+  opacity:0;
+  animation:fadeUp 1s var(--ease-lux) .35s forwards;
+}
+.rule {
+  display:block;width:40px;height:1px;
+  background:var(--gold);
+  margin:0 auto 2.4rem;
+  opacity:0;
+  animation:fadeUp 1s var(--ease-lux) .45s forwards;
+}
+
+/* ── Headings ── */
+h1 {
+  font-family:'Cormorant Garamond',serif;
+  font-weight:300;
+  font-size:clamp(2.8rem,6vw,5rem);
+  line-height:1.06;
+  letter-spacing:-.02em;
+  color:var(--cream-0);
+  margin-bottom:1.6rem;
+  max-width:600px;
+  opacity:0;
+  animation:fadeUp 1.1s var(--ease-lux) .5s forwards;
+}
+
+.body-text {
+  font-size:clamp(.95rem,1.8vw,1.1rem);
+  color:var(--text-dark);
+  max-width:460px;
+  line-height:2.05;
+  margin-bottom:1.2rem;
+  opacity:0;
+  animation:fadeUp 1s var(--ease-lux) .7s forwards;
+}
+
+.secondary-text {
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:clamp(1rem,1.8vw,1.2rem);
+  color:var(--text-dark-lo);
+  margin-bottom:3.5rem;
+  opacity:0;
+  animation:fadeUp 1s var(--ease-lux) .85s forwards;
+}
+
+/* ── CTA buttons ── */
+.btn-group {
+  display:flex;gap:1.2rem;flex-wrap:wrap;justify-content:center;
+  opacity:0;
+  animation:fadeUp 1s var(--ease-lux) 1s forwards;
+}
+.btn {
+  display:inline-block;
+  font-family:'Jost',sans-serif;font-weight:400;
+  font-size:0.62rem;letter-spacing:0.26em;text-transform:uppercase;
+  text-decoration:none;cursor:pointer;
+  transition:background .4s,color .4s,border-color .4s;
+  white-space:nowrap;
+}
+.btn--gold {
+  background:var(--gold);color:var(--ink-0);
+  padding:1.05rem 3rem;border:none;
+}
+.btn--gold:hover{background:var(--gold-soft);}
+.btn--outline {
+  background:transparent;
+  border:1px solid rgba(255,255,255,.3);
+  color:rgba(255,255,255,.75);
+  padding:1.05rem 2.5rem;
+}
+.btn--outline:hover{border-color:var(--gold);color:var(--gold);}
+
+/* ── Divider ── */
+.divider {
+  width:100%;max-width:640px;
+  height:1px;
+  background:linear-gradient(90deg,transparent,var(--gold-rule),rgba(201,169,110,.5),var(--gold-rule),transparent);
+  margin:4rem auto;
+  opacity:0;
+  animation:fadeUp 1s var(--ease-lux) 1.1s forwards;
+}
+
+/* ── Contact strip ── */
+.contact-strip {
+  position:relative;z-index:1;
+  border-top:1px solid var(--gold-rule);
+  padding:3.5rem 2rem;
+  display:flex;justify-content:center;gap:6rem;flex-wrap:wrap;
+}
+.contact-col-label {
+  display:block;font-size:.56rem;letter-spacing:.34em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:.55rem;
+}
+.contact-col a,.contact-col p {
+  font-family:'Cormorant Garamond',serif;font-size:1.2rem;
+  color:rgba(240,232,218,.72);text-decoration:none;transition:color .3s;
+}
+.contact-col a:hover{color:var(--gold-soft);}
+
+/* ── Footer ── */
+footer {
+  position:relative;z-index:1;
+  border-top:1px solid rgba(201,169,110,.1);
+  padding:1.8rem;text-align:center;
+}
+footer p {
+  font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;
+  color:rgba(255,255,255,.18);
+}
+footer strong {
+  font-family:'Cormorant Garamond',serif;font-weight:300;
+  letter-spacing:.28em;font-size:.78rem;color:var(--gold);
+}
+
+/* ── Animations ── */
+@keyframes fadeUp {
+  from{opacity:0;transform:translateY(20px);}
+  to{opacity:1;transform:none;}
+}
+
+/* ── Responsive ── */
+@media(max-width:600px){
+  .nav{padding:1.4rem 1.5rem;}
+  main{padding:5rem 1.5rem;}
+  .btn-group{flex-direction:column;align-items:center;}
+  .btn{min-width:240px;text-align:center;}
+  .contact-strip{gap:2.5rem;padding:3rem 1.5rem;}
+}
+</style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav class="nav">
+  <a href="/" class="nav-logo">Vision Studio</a>
+</nav>
+
+<!-- Main content -->
+<main>
+  <div class="check-wrap">
+    <svg viewBox="0 0 24 24">
+      <polyline points="20 6 9 17 4 12"></polyline>
+    </svg>
+  </div>
+
+  <span class="label">Megkaptuk az üzeneted</span>
+  <span class="rule"></span>
+
+  <h1>Köszönjük,<br><em style="font-style:italic;color:var(--gold-soft);">megkaptuk!</em></h1>
+
+  <p class="body-text">24 órán belül jelentkezünk, és megnézzük, szabad-e a dátumotok.</p>
+
+  <p class="secondary-text">A dátum egyeztetés nem jár kötelezettséggel.</p>
+
+  <p class="secondary-text" style="margin-top:-.5rem;font-size:clamp(.9rem,1.5vw,1rem);">Ha sürgős, írjatok WhatsAppon is.</p>
+
+  <div class="btn-group">
+    <a href="/" class="btn btn--gold">Vissza a főoldalra</a>
+    <a href="https://wa.me/36303462267?text=Szia!%20K%C3%BCldtem%20egy%20form%C3%B3t%20-%20s%C3%BCrg%C5%91s%20k%C3%A9rd%C3%A9sem%20lenne."
+       target="_blank" rel="noopener" class="btn btn--outline">
+      WhatsApp
+    </a>
+  </div>
+
+  <div class="divider"></div>
+</main>
+
+<!-- Contact strip -->
+<div class="contact-strip">
+  <div class="contact-col">
+    <span class="contact-col-label">Telefon</span>
+    <a href="tel:+36303462267">0630 / 346-22-67</a>
+  </div>
+  <div class="contact-col">
+    <span class="contact-col-label">E-mail</span>
+    <a href="mailto:hello@visionstudio.hu">hello@visionstudio.hu</a>
+  </div>
+  <div class="contact-col">
+    <span class="contact-col-label">Instagram</span>
+    <a href="https://instagram.com/visionstudio.hu" target="_blank" rel="noopener">@visionstudio.hu</a>
+  </div>
+</div>
+
+<footer>
+  <p><strong>Vision Studio</strong> &nbsp;·&nbsp; Lengyel Adrián &nbsp;·&nbsp; Esküvői filmkészítés &nbsp;·&nbsp; 2026</p>
+</footer>
+
+
+<!-- Conversion tracking -->
+<script>
+fbq('track', 'Lead');
+</script>
+<script>
+gtag('event', 'conversion', {
+  'event_category': 'lead',
+  'event_label': 'form_submit'
+});
+</script>
+
+</body>
+</html>
