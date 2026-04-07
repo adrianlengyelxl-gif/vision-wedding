@@ -1351,8 +1351,13 @@ footer strong{font-family:'Cormorant Garamond',serif;font-weight:300;letter-spac
 })();
 </script>
 <form name="contact" method="POST" data-netlify="true" hidden>
+  <input type="hidden" name="form-name" value="contact">
   <input type="text" name="name">
   <input type="email" name="email">
+  <input type="tel" name="phone">
+  <input type="text" name="date">
+  <textarea name="message"></textarea>
+  <input name="bot-field">
 </form>
 </body>
 </html>
